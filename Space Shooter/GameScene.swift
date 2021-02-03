@@ -8,7 +8,12 @@
 
 import SpriteKit
 import GameplayKit
-
+enum CollisionType: UInt32 {
+    case player = 1
+    case playerWeapon = 2
+    case enemy = 4
+    case enemyWeapon = 8
+}
 class GameScene: SKScene {
     
     let player = SKSpriteNode(imageNamed: "spaceship")
@@ -23,6 +28,10 @@ class GameScene: SKScene {
         player.position.x = frame.minX + 75
         player.zPosition = 1
         addChild(player)
+        player.physicsBody = SKPhysicsBody(texture: player.texture!, size: player.texture!.size())
+        player.physicsBody?.categoryBitMask = CollisionType.player.rawValue
+        player.physicsBody?.collisionBitMask = CollisonType.enemy.rawValue |CollisonType.enemyWeapon.rawValue
+        
         setupLabels()
     }
     func setupLabels(){
