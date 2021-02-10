@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C159886A25D3874900632438 /* waves.json in Resources */ = {isa = PBXBuildFile; fileRef = C159886925D3874900632438 /* waves.json */; };
+		C159886C25D387CA00632438 /* enemy-types.json in Resources */ = {isa = PBXBuildFile; fileRef = C159886B25D387CA00632438 /* enemy-types.json */; };
+		C159886E25D387E700632438 /* Bundle-Decoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C159886D25D387E700632438 /* Bundle-Decoding.swift */; };
+		C159887025D3889600632438 /* Wave.swift in Sources */ = {isa = PBXBuildFile; fileRef = C159886F25D3889600632438 /* Wave.swift */; };
+		C159887225D38A1700632438 /* EnemyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C159887125D38A1600632438 /* EnemyType.swift */; };
 		C177D03E25C1186200D320C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C177D03D25C1186200D320C6 /* AppDelegate.swift */; };
 		C177D04025C1186200D320C6 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C177D03F25C1186200D320C6 /* GameScene.sks */; };
 		C177D04425C1186200D320C6 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C177D04325C1186200D320C6 /* GameScene.swift */; };
@@ -19,6 +24,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C159886925D3874900632438 /* waves.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = waves.json; sourceTree = "<group>"; };
+		C159886B25D387CA00632438 /* enemy-types.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "enemy-types.json"; sourceTree = "<group>"; };
+		C159886D25D387E700632438 /* Bundle-Decoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle-Decoding.swift"; sourceTree = "<group>"; };
+		C159886F25D3889600632438 /* Wave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wave.swift; sourceTree = "<group>"; };
+		C159887125D38A1600632438 /* EnemyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyType.swift; sourceTree = "<group>"; };
 		C177D03A25C1186200D320C6 /* Space Shooter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Space Shooter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C177D03D25C1186200D320C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C177D03F25C1186200D320C6 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -64,6 +74,9 @@
 		C177D03C25C1186200D320C6 /* Space Shooter */ = {
 			isa = PBXGroup;
 			children = (
+				C159886D25D387E700632438 /* Bundle-Decoding.swift */,
+				C159886B25D387CA00632438 /* enemy-types.json */,
+				C159886925D3874900632438 /* waves.json */,
 				C177D03D25C1186200D320C6 /* AppDelegate.swift */,
 				C177D03F25C1186200D320C6 /* GameScene.sks */,
 				C177D04325C1186200D320C6 /* GameScene.swift */,
@@ -72,6 +85,8 @@
 				C177D04A25C1187000D320C6 /* Assets.xcassets */,
 				C177D04C25C1187000D320C6 /* LaunchScreen.storyboard */,
 				C177D04F25C1187000D320C6 /* Info.plist */,
+				C159886F25D3889600632438 /* Wave.swift */,
+				C159887125D38A1600632438 /* EnemyType.swift */,
 			);
 			path = "Space Shooter";
 			sourceTree = "<group>";
@@ -134,8 +149,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C159886C25D387CA00632438 /* enemy-types.json in Resources */,
 				C177D05725C1194300D320C6 /* Stars.sks in Resources */,
 				C177D04925C1186200D320C6 /* Main.storyboard in Resources */,
+				C159886A25D3874900632438 /* waves.json in Resources */,
 				C177D04025C1186200D320C6 /* GameScene.sks in Resources */,
 				C177D04B25C1187000D320C6 /* Assets.xcassets in Resources */,
 				C177D05825C1194300D320C6 /* Assets.xcassets in Resources */,
@@ -150,6 +167,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C159886E25D387E700632438 /* Bundle-Decoding.swift in Sources */,
+				C159887025D3889600632438 /* Wave.swift in Sources */,
+				C159887225D38A1700632438 /* EnemyType.swift in Sources */,
 				C177D04425C1186200D320C6 /* GameScene.swift in Sources */,
 				C177D04625C1186200D320C6 /* GameViewController.swift in Sources */,
 				C177D03E25C1186200D320C6 /* AppDelegate.swift in Sources */,
