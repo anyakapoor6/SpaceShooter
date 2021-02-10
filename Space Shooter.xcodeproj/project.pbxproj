@@ -12,6 +12,7 @@
 		C159886E25D387E700632438 /* Bundle-Decoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C159886D25D387E700632438 /* Bundle-Decoding.swift */; };
 		C159887025D3889600632438 /* Wave.swift in Sources */ = {isa = PBXBuildFile; fileRef = C159886F25D3889600632438 /* Wave.swift */; };
 		C159887225D38A1700632438 /* EnemyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C159887125D38A1600632438 /* EnemyType.swift */; };
+		C159887425D38C2700632438 /* EnemyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C159887325D38C2700632438 /* EnemyNode.swift */; };
 		C177D03E25C1186200D320C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C177D03D25C1186200D320C6 /* AppDelegate.swift */; };
 		C177D04025C1186200D320C6 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C177D03F25C1186200D320C6 /* GameScene.sks */; };
 		C177D04425C1186200D320C6 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C177D04325C1186200D320C6 /* GameScene.swift */; };
@@ -29,6 +30,7 @@
 		C159886D25D387E700632438 /* Bundle-Decoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle-Decoding.swift"; sourceTree = "<group>"; };
 		C159886F25D3889600632438 /* Wave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wave.swift; sourceTree = "<group>"; };
 		C159887125D38A1600632438 /* EnemyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyType.swift; sourceTree = "<group>"; };
+		C159887325D38C2700632438 /* EnemyNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyNode.swift; sourceTree = "<group>"; };
 		C177D03A25C1186200D320C6 /* Space Shooter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Space Shooter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C177D03D25C1186200D320C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C177D03F25C1186200D320C6 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				C177D04F25C1187000D320C6 /* Info.plist */,
 				C159886F25D3889600632438 /* Wave.swift */,
 				C159887125D38A1600632438 /* EnemyType.swift */,
+				C159887325D38C2700632438 /* EnemyNode.swift */,
 			);
 			path = "Space Shooter";
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C159886E25D387E700632438 /* Bundle-Decoding.swift in Sources */,
+				C159887425D38C2700632438 /* EnemyNode.swift in Sources */,
 				C159887025D3889600632438 /* Wave.swift in Sources */,
 				C159887225D38A1700632438 /* EnemyType.swift in Sources */,
 				C177D04425C1186200D320C6 /* GameScene.swift in Sources */,
