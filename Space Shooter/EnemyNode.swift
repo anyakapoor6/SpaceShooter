@@ -24,5 +24,8 @@ class EnemyNode: SKSpriteNode {
         name = "enemy"
         position = CGPoint(x: startPosition.x + xOffset, y: startPosition.y)
     }
-    
+    func fire(){
+        let weaponType = "\(type.name)Weapon"
+        let weapon = SKSpriteNode(imageNamed: weaponType)
+    }
 }
