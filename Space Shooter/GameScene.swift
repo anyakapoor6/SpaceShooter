@@ -21,7 +21,7 @@ class GameScene: SKScene {
     let enemyTypes = Bundle.main.decode([EnemyType].self, from: "enemy-types.json")
     var waveNumber = 0
     var isPlayerAlive = true
-    let positions = Array(stride(from: -320, to: 320, by: 80))
+    let positions = Array(stride(from: -320, through: 320, by: 80))
     var levelNumber = 0
    
     override func didMove(to view: SKView) {
@@ -85,8 +85,8 @@ class GameScene: SKScene {
         }
         else {
             for enemy in currentWave.enemies {
-//                let node = EnemyNode(type: enemyTypes[enemyType], startPosition: CGPoint(x: enemyStartX, y: positions[enemy.position]), xOffset: enemyOffsetX * enemy.xOffset, moveStraight: enemy.moveStraight)
-//                addChild(node)
+                let node = EnemyNode(type: enemyTypes[enemyType], startPosition: CGPoint(x: enemyStartX, y: positions[enemy.position]), xOffset: enemyOffsetX * enemy.xOffset, moveStraight: enemy.moveStraight)
+                addChild(node)
             }
         }
     }
