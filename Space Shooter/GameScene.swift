@@ -23,6 +23,7 @@ class GameScene: SKScene {
     var isPlayerAlive = true
     let positions = Array(stride(from: -320, through: 320, by: 80))
     var levelNumber = 0
+    var playerShields = 10
    
     override func didMove(to view: SKView) {
         if let particles = SKEmitterNode(fileNamed: "Stars"){
@@ -113,5 +114,61 @@ class GameScene: SKScene {
         let movement = SKAction.move(to: CGPoint(x: 1900, y: shot.position.y), duration: 5)
         let sequence = SKAction.sequence([movement, .removeFromParent()])
         shot.run(sequence)
+    }
+    
+    func didBegin(_ contact: SKPhysicsContact){
+        guard let nodeA = contact.bodyA.node else {return}
+        guard let nodeB = contact.bodyB.node else {return}
+        let sortedNodes = [nodeA, nodeB].sorted {$0.name ?? "" < $1.name ??  ""}
+        let firstNode = sortedNodes[0]
+        let secondNode = sortedNodes[1]
+        
+        if secondNode.name == "player" {
+            guard isPlayerAlive else {return}
+            if let explosion = SKEmitterNode(fileNamed: "explosion") {
+                explosion.position = firstNode.position
+                addChild(explosion)
+                
+            }
+            playerShields -= 1
+            
+            if playerShields == 0 {
+                gameOver()
+                secondNode.removeFromParent()
+            }
+            firstNode.removeFromParent()
+        }
+        else if let enemy = firstNode as? EnemyNode {
+            enemy.shields -= 1
+            if enemy.shields == 0 {
+                if let explosion = SKEmitterNode(fileNamed: "explosion") {
+                    explosion.position = enemy.position
+                    addChild(explosion)
+                }
+                enemy.removeFromParent()
+            }
+            if let explosion = SKEmitterNode(fileNamed: "explosion") {
+                explosion.position = enemy.position
+                addChild(explosion)
+            }
+            secondNode.removeFromParent()
+        }
+        else {
+            if let explosion = SKEmitterNode(fileNamed: "explosion") {
+                explosion.position = secondNode.position
+                addChild(explosion)
+            }
+            firstNode.removeFromParent()
+            secondNode.removeFromParent()
+        }
+    }
+    func gameOver(){
+        isPlayerAlive = false
+        if let explosion = SKEmitterNode(fileNamed: "explosion"){
+            explosion.position = player.position
+            addChild(explosion)
+        }
+        let gameOver = SKSpriteNode(imageNamed: "gameOver")
+        addChild(gameOver)
     }
 }
