@@ -8,6 +8,7 @@
 
 import SpriteKit
 import GameplayKit
+import CoreMotion
 enum CollisionType: UInt32 {
     case player = 1
     case playerWeapon = 2
@@ -24,6 +25,7 @@ class GameScene: SKScene {
     let positions = Array(stride(from: -320, through: 320, by: 80))
     var levelNumber = 0
     var playerShields = 10
+    let motionManager = CMMotionManager()
    
     override func didMove(to view: SKView) {
         if let particles = SKEmitterNode(fileNamed: "Stars"){
@@ -41,7 +43,7 @@ class GameScene: SKScene {
         player.physicsBody?.contactTestBitMask = CollisionType.enemy.rawValue|CollisionType.enemyWeapon.rawValue
         player.physicsBody?.isDynamic = false
   
-        
+        motionManager.startAccelerometerUpdates()
     
         setupLabels()
     }
@@ -55,6 +57,16 @@ class GameScene: SKScene {
         addChild(scoreTextLabel)
     }
     override func update(_ currentTime: TimeInterval){
+        if let accelerometerData = motionManager.accelerometerData {
+            player.position.y += CGFloat(accelerometerData.acceleration.x * 50)
+            
+            if player.position.y < frame.minY {
+                player.position.y = frame.minY
+            }
+            else if player.position.y > frame.maxY {
+                player.position.y = frame.maxY
+            }
+        }
         let activeEnemies = children.compactMap{$0 as? EnemyNode}
         if activeEnemies.isEmpty {
             createWave()
